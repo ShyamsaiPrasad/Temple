@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ammavaru</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     <style>
+       @keyframes changeProperties {
+            0% {
+                color: red;
+                background-color: rgba(0, 0, 255, 0.5); /* Adjust the opacity as needed */
+            }
+            25% {
+                color: blue;
+                background-color: rgba(0, 255, 0, 0.5); /* Adjust the opacity as needed */
+            }
+            50% {
+                color: green;
+                background-color: rgba(255, 165, 0, 0.5); /* Adjust the opacity as needed */
+            }
+            75% {
+                color: orange;
+                background-color: rgba(255, 255, 0, 0.5); /* Adjust the opacity as needed */
+            }
+            100% {
+                color: red;
+                background-color: rgba(0, 0, 255, 0.5); /* Adjust the opacity as needed */
+            }
+        }
+
+        body .container{
+            animation: changeProperties 10s linear infinite;
+            /* Adjust animation duration and timing function as needed */
+        }
+        marquee {
+            animation: changeProperties 10s linear infinite;
+
+            /* Adjust animation duration and timing function as needed */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg shadow" style="background:body">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="another_page.html">images</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="videos.html">Videos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about_us.html">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact_us.html">Contact us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row justify-content-center align-items-center mt-5">
+            <marquee><b>ఆలయ దర్శనానికి వచ్చే వారందరికీ స్వాగతం</b></marquee>
+        </div>
+        <div class="row justify-content-center shadow">
+            <div class="col-auto">
+                <span class=""><img id="slideshow" src="media/1_image.jpg" alt="not found" height="600px" width="500px"></span>
+                <!-- <div>మళ్ళీ వెనక్కి వెళ్ళడానికి<a href="index.html" style="text-decoration:none; animation: changeProperties 10s linear infinite;">&nbsp;<b>ఇక్కడ క్లిక్ చేయండి</b></a></div> -->
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        // JavaScript code to implement image slideshow
+        var images = ["media/1_image.jpg", "media/2_image.jpg", "media/3_image.jpg","media/4_image.jpg"]; // Array of image paths
+        var index = 0; // Index of the current image
+
+        // Function to change the image
+        function changeImage() {
+            index = (index + 1) % images.length; // Increment index and loop back to 0 if it exceeds the length of the images array
+            document.getElementById("slideshow").src = images[index]; // Change the src attribute of the image
+        }
+
+        // Automatically change the image every 5 seconds
+        setInterval(changeImage, 5000); // Change the time interval as needed (in milliseconds)
+    </script>
+    
+</body>
+</html>
